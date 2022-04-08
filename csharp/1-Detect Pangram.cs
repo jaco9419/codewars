@@ -5,14 +5,14 @@ public static class Kata
 {
   public static bool IsPangram(string str)
   {
-    char[] strArray = str.ToLower().ToCharArray();
-    Array.Sort(strArray, StringComparer.InvariantCulture);
+    char[] charArray = str.ToLower().ToCharArray();
+    Array.Sort(charArray, StringComparer.InvariantCulture);
     
-    HashSet<char> unDuplicatedStrArray = new HashSet<char>(strArray);
+    HashSet<char> unDuplicatedStrArray = new HashSet<char>(charArray);
     
     List<char> lettersOnlyStrList = new List<char>();
 
-    foreach(var item in unDuplicatedStrArray)
+    foreach(char item in unDuplicatedStrArray)
     {
       if ((int)item >= 97 && (int)item <= 122)
       {
